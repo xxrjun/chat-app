@@ -11,8 +11,8 @@ You can check out the live project ([netlify](https://www.netlify.com/)) by clic
 <!-- PROJECT Demo -->
 <div align="center">
   <h3 align="center">Demo</h3>
-  <img src="./demo/chat-app-demo-login.gif" width="1024px"/>
-  <img src="./demo/chat-app-demo.gif" width="1024px"/>
+  <img src="./demo/chat-app-demo-login.gif" width="800px"/>
+  <img src="./demo/chat-app-demo.gif" width="800px"/>
 </div>
 
 
