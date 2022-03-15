@@ -1,4 +1,3 @@
-import React from "react";
 import MyMessage from "./MyMessage";
 import TheirMessage from "./TheirMessage";
 import MessageForm from "./MessageForm";
@@ -8,15 +7,35 @@ function ChatFeed(props) {
 
   const chat = chats && chats[activeChat];
 
+  // last_read did not work, don't know how.
+  // const renderReadReceipts = (message, isMyMessage) => {
+  //   console.log(chat);
+
+  //   return chat.people.map(
+  //     (person, index) =>
+  //       person.last_read === message.id && (
+  //         <div
+  //           className="read-receipt"
+  //           key={`read_${index}`}
+  //           style={{
+  //             float: isMyMessage ? "right" : "left",
+  //             backgroundImage:
+  //               person.person.avatar && `url(${person.person.avatar})`,
+  //           }}
+  //         />
+  //       )
+  //   );
+  // };
+
   const renderMessages = () => {
     const keys = Object.keys(messages);
 
     return keys.map((key, index) => {
       const message = messages[key];
-      const lastMessageKey = index === 0 ? null : messages[index - 1];
+      const lastMessageKey = index === 0 ? null : keys[index - 1];
       const isMyMessage = userName === message.sender.username;
 
-      // return our actice message
+      // return our active message
       return (
         <div key={`msg_${index}`} style={{ width: "100%" }}>
           <div className="message-block">
@@ -35,7 +54,9 @@ function ChatFeed(props) {
               marginRight: isMyMessage ? "18px" : "0px",
               marginLeft: isMyMessage ? "0px" : "68px",
             }}
-          ></div>
+          >
+            {/* {renderReadReceipts(message, isMyMessage)} */}
+          </div>
         </div>
       );
     });

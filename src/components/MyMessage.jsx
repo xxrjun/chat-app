@@ -2,7 +2,7 @@ import React from "react";
 
 function MyMessage({ message }) {
   // If message is a image, then return a img
-  if (message?.attachments?.length > 0) {
+  if (message.attachments && message.attachments.length > 0) {
     return (
       <img
         src={message.attachments[0].file}
@@ -12,6 +12,7 @@ function MyMessage({ message }) {
       />
     );
   }
+
   // Else return a text message
   return (
     <div
